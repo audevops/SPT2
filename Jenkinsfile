@@ -20,7 +20,7 @@ pipeline {
       steps {
          
         sh '''
-curl --request POST --url 'https://ausdevops.atlassian.net/rest/api/latest/issue/DL-79/transitions' --user 'yashmourya29@gmail.com:ATATT3xFfGF0SyxhZ1hnZeIxsPZaSEeBgL7Ep0T-fq8c_cdZkGI6riQaaNZH2R3Yu3m5lGrRBy26iNF0TPWh1KsRvJwPygnxgb3WDnQXDiywLIJTYwTye3o00qn5n8Ewpa4RrTjxlkstccd3TmuprDg5T10Hah9R8_R1Oc45VN-E0FCOOOBm9tE=95F791F8' --header 'Accept: application/json' --header 'Content-Type: application/json' --data '{"transition": {"id": "3"}}'
+curl --request POST --url 'https://ausdevops.atlassian.net/rest/api/latest/issue/DL-79/transitions' --user 'shashwat.prasad.telstra@gmail.com:ATATT3xFfGF0B2NwWSue2gxRQpS7x1AaOA1gfGSNrSnysnBc8ji6g0A1XH4zOEjzteTec-Rh6st60rf9vZHUGNiOghF1UrPdMIzrGAT1Ay76Em-PzPsameT5cshaHj4TTJAouwn0d7w4rwy3qfN7LniYllUDfN4e6gAE3l69M_AzJ8qrJ_6Updo=7F03D91E' --header 'Accept: application/json' --header 'Content-Type: application/json' --data '{"transition": {"id": "3"}}'
 '''         
          }} 
 
@@ -33,7 +33,7 @@ curl --request POST --url 'https://ausdevops.atlassian.net/rest/api/latest/issue
           sh '> $PWD/test.txt && cat $PWD/test.txt'
 for (int i = 0; i < 10; i++) {
          Job_Status=null
-         Jira_staus = sh(script: 'curl -s -D- -u yashmourya29@gmail.com:ATATT3xFfGF0SyxhZ1hnZeIxsPZaSEeBgL7Ep0T-fq8c_cdZkGI6riQaaNZH2R3Yu3m5lGrRBy26iNF0TPWh1KsRvJwPygnxgb3WDnQXDiywLIJTYwTye3o00qn5n8Ewpa4RrTjxlkstccd3TmuprDg5T10Hah9R8_R1Oc45VN-E0FCOOOBm9tE=95F791F8 -X GET -H "Content-Type: application/json" https://ausdevops.atlassian.net/rest/api/latest/issue/$Jira_ID?fields=status', returnStdout: true).trim()
+         Jira_staus = sh(script: 'curl -s -D- -u shashwat.prasad.telstra@gmail.com:ATATT3xFfGF0B2NwWSue2gxRQpS7x1AaOA1gfGSNrSnysnBc8ji6g0A1XH4zOEjzteTec-Rh6st60rf9vZHUGNiOghF1UrPdMIzrGAT1Ay76Em-PzPsameT5cshaHj4TTJAouwn0d7w4rwy3qfN7LniYllUDfN4e6gAE3l69M_AzJ8qrJ_6Updo=7F03D91E -X GET -H "Content-Type: application/json" https://ausdevops.atlassian.net/rest/api/latest/issue/$Jira_ID?fields=status', returnStdout: true).trim()
          println Jira_staus
          logFile.append(Jira_staus)
          sh 'cat test.txt && pwd && ls -lart'
@@ -49,7 +49,7 @@ for (int i = 0; i < 10; i++) {
                       }
           sleep(10) 
           println i
-          if (i == 10) {System.exit(1); }
+          if (i == 9) {System.exit(1); }
          }
              
          }}
