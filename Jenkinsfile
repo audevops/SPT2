@@ -17,7 +17,7 @@ pipeline {
       steps {
          
         sh '''
-curl --request POST --url 'https://ausdevops.atlassian.net/rest/api/latest/issue/DL-73/transitions' --user 'shashwat.prasad.telstra@gmail.com:ATATT3xFfGF0HWdxV_vDI2xZO5NwqLGUL5G8Y3dvhtQ7AdrF7Bq9GcULPZ4hOB3AR3iOLYtt9SOdN6Nm6O_3xKIpLi6z-tbhVzdgS4xAzMlINadct_RAp16eMogK4w7QUaIKhH_RXV7rCx9iKeLzNrlh2qn2PNBBrAKy_Xccf2oOM-aVf2gyYiE=FABD6504' --header 'Accept: application/json' --header 'Content-Type: application/json' --data '{ "body": {"type": "doc","version": 1,"content": [{"type": "paragraph", "content": [{ "text": "Hello There!!", "type": "text" }]}]},"transition": {"id": "3"}}'
+curl --request POST --url 'https://ausdevops.atlassian.net/rest/api/latest/issue/DL-73/transitions' --user 'shashwat.prasad.telstra@gmail.com:ATATT3xFfGF0oS0uEoLlNSTDof_-uQnLgrFxmm2hh-n-qrcNNWP5N3eg48e9mNqZddLH69Z3rQ81snhkVul31I-HMEc9i26imHPkcEo5S-y1ATYO8jHU2Oqg6ZYRJADCvUhWSRWrZsqMc_1A3Y0bOZ06hs3jmV7-tXuaYGYOztPQlE9e--1JLGk=85157C8B' --header 'Accept: application/json' --header 'Content-Type: application/json' --data '{ "body": {"type": "doc","version": 1,"content": [{"type": "paragraph", "content": [{ "text": "Hello There!!", "type": "text" }]}]},"transition": {"id": "3"}}'
 '''         
          }}          
   }}
