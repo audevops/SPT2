@@ -2,7 +2,7 @@ pipeline {
   agent any
     environment {
         STR = "https://ausdevops.atlassian.net/rest/api/2/status/10009"
-        Jira_ID = "DL-78"
+        Jira_ID = "DL-79"
     }
   stages {
        stage('Gitlab File Download') 
@@ -20,7 +20,7 @@ pipeline {
       steps {
          
         sh '''
-curl --request POST --url 'https://ausdevops.atlassian.net/rest/api/latest/issue/DL-78/transitions' --user 'yashmourya29@gmail.com:ATATT3xFfGF0SyxhZ1hnZeIxsPZaSEeBgL7Ep0T-fq8c_cdZkGI6riQaaNZH2R3Yu3m5lGrRBy26iNF0TPWh1KsRvJwPygnxgb3WDnQXDiywLIJTYwTye3o00qn5n8Ewpa4RrTjxlkstccd3TmuprDg5T10Hah9R8_R1Oc45VN-E0FCOOOBm9tE=95F791F8' --header 'Accept: application/json' --header 'Content-Type: application/json' --data '{"transition": {"id": "3"}}'
+curl --request POST --url 'https://ausdevops.atlassian.net/rest/api/latest/issue/DL-79/transitions' --user 'yashmourya29@gmail.com:ATATT3xFfGF0SyxhZ1hnZeIxsPZaSEeBgL7Ep0T-fq8c_cdZkGI6riQaaNZH2R3Yu3m5lGrRBy26iNF0TPWh1KsRvJwPygnxgb3WDnQXDiywLIJTYwTye3o00qn5n8Ewpa4RrTjxlkstccd3TmuprDg5T10Hah9R8_R1Oc45VN-E0FCOOOBm9tE=95F791F8' --header 'Accept: application/json' --header 'Content-Type: application/json' --data '{"transition": {"id": "3"}}'
 '''         
          }} 
 
