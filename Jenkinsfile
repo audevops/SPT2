@@ -9,10 +9,16 @@ pipeline {
          sh 'ls -lart'
          echo "SCM Pooling Complete Files Downloaded"
          sh 'ls -lart & pwd'
-         echo "Moving Jira Task to Next ID 3"
-         sh 'curl -D- -u abhi24.81@gmail.com:ATATT3xFfGF0IreCittgQJqoeNONWPBQXRp_8EJyHA109X3Nw9BwpmBlj2pwj71Ei1QNEMHg_Hp4XchGGiSLrmUL41n8hHIv2MryIkhHlrtdvGuUNhgRHJHtFU-vdtSh428LZEcSJXTE1dbgW2NZoNCxiSW7H-uzyEerR9gS0k-nfSw04B422UQ=C7683585 -X POST -d "{\"update\": {\"comment\": [{\"add\": {\"body\": \"Transitioned as all sub-tasks closed\"}}]},\"transition\": {\"id\": \"3\"}}" -H "Content-Type: application/json" https://ausdevops.atlassian.net/rest/api/2/issue/DL-73/transitions'
-        
-         }}}    
-            
+         echo "Moving Jira Task to Next ID 3, Code ready for Approval"
+         
+         }}}  
+
+    stage('Jira Transition ID 3') {
+      steps {
+        sh '''
+curl --request POST --url 'https://ausdevops.atlassian.net/rest/api/latest/issue/DL-73/transitions' --user 'shashwat.prasad.telstra@gmail.com:ATATT3xFfGF0HWdxV_vDI2xZO5NwqLGUL5G8Y3dvhtQ7AdrF7Bq9GcULPZ4hOB3AR3iOLYtt9SOdN6Nm6O_3xKIpLi6z-tbhVzdgS4xAzMlINadct_RAp16eMogK4w7QUaIKhH_RXV7rCx9iKeLzNrlh2qn2PNBBrAKy_Xccf2oOM-aVf2gyYiE=FABD6504' --header 'Accept: application/json' --header 'Content-Type: application/json' --data '{ "body": {"type": "doc","version": 1,"content": [{"type": "paragraph", "content": [{ "text": "Hello There!!", "type": "text" }]}]},"transition": {"id": "3"}}'
+'''
+         script{ 
+         }}}        
     
   }}
