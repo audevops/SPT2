@@ -4,9 +4,8 @@ pipeline {
         STR = "https://ausdevops.atlassian.net/rest/api/2/status/10009"
         Jira_ID = "DL-75"
   stages {
-
-    
-    stage('Gitlab File Download') {
+       stage('Gitlab File Download') 
+    {
       steps {
          script{ 
          sh 'ls -lart'
@@ -14,7 +13,7 @@ pipeline {
          sh 'ls -lart & pwd'
          echo "Moving Jira Task to Next ID 3, Code ready for Approval"
          
-         }}}  
+         }}}
 
     stage('Jira Transition ID 3') {
       steps {
@@ -69,4 +68,4 @@ exit
 '''
             }}
          
-         }}}       
+         }}}    
