@@ -13,11 +13,11 @@ pipeline {
          
          }}}  
 
-    stage('Jira Transition ID 3') {
+    stage('Jira Transition ID 7') {
       steps {
          
         sh '''
-curl --request POST --url 'https://ausdevops.atlassian.net/rest/api/latest/issue/DL-73/transitions' --user 'shashwat.prasad.telstra@gmail.com:ATATT3xFfGF0HWdxV_vDI2xZO5NwqLGUL5G8Y3dvhtQ7AdrF7Bq9GcULPZ4hOB3AR3iOLYtt9SOdN6Nm6O_3xKIpLi6z-tbhVzdgS4xAzMlINadct_RAp16eMogK4w7QUaIKhH_RXV7rCx9iKeLzNrlh2qn2PNBBrAKy_Xccf2oOM-aVf2gyYiE=FABD6504' --header 'Accept: application/json' --header 'Content-Type: application/json' --data '{ "body": {"type": "doc","version": 1,"content": [{"type": "paragraph", "content": [{ "text": "Hello There!!", "type": "text" }]}]},"transition": {"id": "3"}}'
+curl --request POST --url 'https://ausdevops.atlassian.net/rest/api/latest/issue/DL-73/transitions' --user 'shashwat.prasad.telstra@gmail.com:ATATT3xFfGF0WJyxsTRN9ay5AcLUrUv6XfsbjUiVlEKWWI7dZDV6FvI7zKbTjZ0xkPKmEKHAISDfo0ndkxaf1R8gGuDT2x8CbEWPQSTKy-g9clpGqLMkViWdFALQFMgafHXtYzWVrc528IphU4_KynajOk_WnpZwMi8Mw__TmRVgIyRM2uKhN9w=AC8121C8' --header 'Accept: application/json' --header 'Content-Type: application/json' --data '{"transition": {"id": "7"}}'
 '''         
          }}          
   }}
