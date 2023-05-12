@@ -3,6 +3,7 @@ pipeline {
     environment {
         STR = "https://ausdevops.atlassian.net/rest/api/2/status/10009"
         Jira_ID = "DL-75"
+    }
   stages {
        stage('Gitlab File Download') 
     {
@@ -68,4 +69,4 @@ exit
 '''
             }}
          
-         }}}    
+         }}
