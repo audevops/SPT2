@@ -2,7 +2,7 @@ pipeline {
   agent any
     environment {
         STR = "https://ausdevops.atlassian.net/rest/api/2/status/10009"
-        Jira_ID = "DL-77"
+        Jira_ID = "DL-78"
     }
   stages {
        stage('Gitlab File Download') 
@@ -20,7 +20,7 @@ pipeline {
       steps {
          
         sh '''
-curl --request POST --url 'https://ausdevops.atlassian.net/rest/api/latest/issue/DL-77/transitions' --user 'shashwat.prasad.telstra@gmail.com:ATATT3xFfGF0fWzgrmCDMICxgn1Q4reUg2-gC6coMHdktTGCnz-fe7OJGtwAiKfcS4TFC_a_dJ2sd2YbgSWjIJLi-w_D93wC26bZKWmgEQxx44PfapbA7qnw90zJDam9QfodtJcH47qUs592LY1cG7MRkZSC1h7Zc3xWkP6pXkklPKYd8uA0o34=CC4F8AF2' --header 'Accept: application/json' --header 'Content-Type: application/json' --data '{"transition": {"id": "3"}}'
+curl --request POST --url 'https://ausdevops.atlassian.net/rest/api/latest/issue/DL-78/transitions' --user 'yashmourya29@gmail.com:ATATT3xFfGF0SyxhZ1hnZeIxsPZaSEeBgL7Ep0T-fq8c_cdZkGI6riQaaNZH2R3Yu3m5lGrRBy26iNF0TPWh1KsRvJwPygnxgb3WDnQXDiywLIJTYwTye3o00qn5n8Ewpa4RrTjxlkstccd3TmuprDg5T10Hah9R8_R1Oc45VN-E0FCOOOBm9tE=95F791F8' --header 'Accept: application/json' --header 'Content-Type: application/json' --data '{"transition": {"id": "3"}}'
 '''         
          }} 
 
@@ -33,7 +33,7 @@ curl --request POST --url 'https://ausdevops.atlassian.net/rest/api/latest/issue
           sh '> $PWD/test.txt && cat $PWD/test.txt'
 for (int i = 0; i < 10; i++) {
          Job_Status=null
-         Jira_staus = sh(script: 'curl -s -D- -u shashwat.prasad.telstra@gmail.com:ATATT3xFfGF0fWzgrmCDMICxgn1Q4reUg2-gC6coMHdktTGCnz-fe7OJGtwAiKfcS4TFC_a_dJ2sd2YbgSWjIJLi-w_D93wC26bZKWmgEQxx44PfapbA7qnw90zJDam9QfodtJcH47qUs592LY1cG7MRkZSC1h7Zc3xWkP6pXkklPKYd8uA0o34=CC4F8AF2 -X GET -H "Content-Type: application/json" https://ausdevops.atlassian.net/rest/api/latest/issue/$Jira_ID?fields=status', returnStdout: true).trim()
+         Jira_staus = sh(script: 'curl -s -D- -u yashmourya29@gmail.com:ATATT3xFfGF0SyxhZ1hnZeIxsPZaSEeBgL7Ep0T-fq8c_cdZkGI6riQaaNZH2R3Yu3m5lGrRBy26iNF0TPWh1KsRvJwPygnxgb3WDnQXDiywLIJTYwTye3o00qn5n8Ewpa4RrTjxlkstccd3TmuprDg5T10Hah9R8_R1Oc45VN-E0FCOOOBm9tE=95F791F8 -X GET -H "Content-Type: application/json" https://ausdevops.atlassian.net/rest/api/latest/issue/$Jira_ID?fields=status', returnStdout: true).trim()
          println Jira_staus
          logFile.append(Jira_staus)
          sh 'cat test.txt && pwd && ls -lart'
