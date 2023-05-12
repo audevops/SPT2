@@ -2,7 +2,7 @@ pipeline {
   agent any
     environment {
         STR = "https://ausdevops.atlassian.net/rest/api/2/status/10009"
-        Jira_ID = "DL-76"
+        Jira_ID = "DL-77"
     }
   stages {
        stage('Gitlab File Download') 
@@ -20,7 +20,7 @@ pipeline {
       steps {
          
         sh '''
-curl --request POST --url 'https://ausdevops.atlassian.net/rest/api/latest/issue/DL-76/transitions' --user 'shashwat.prasad.telstra@gmail.com:ATATT3xFfGF0fWzgrmCDMICxgn1Q4reUg2-gC6coMHdktTGCnz-fe7OJGtwAiKfcS4TFC_a_dJ2sd2YbgSWjIJLi-w_D93wC26bZKWmgEQxx44PfapbA7qnw90zJDam9QfodtJcH47qUs592LY1cG7MRkZSC1h7Zc3xWkP6pXkklPKYd8uA0o34=CC4F8AF2' --header 'Accept: application/json' --header 'Content-Type: application/json' --data '{"transition": {"id": "3"}}'
+curl --request POST --url 'https://ausdevops.atlassian.net/rest/api/latest/issue/DL-77/transitions' --user 'shashwat.prasad.telstra@gmail.com:ATATT3xFfGF0fWzgrmCDMICxgn1Q4reUg2-gC6coMHdktTGCnz-fe7OJGtwAiKfcS4TFC_a_dJ2sd2YbgSWjIJLi-w_D93wC26bZKWmgEQxx44PfapbA7qnw90zJDam9QfodtJcH47qUs592LY1cG7MRkZSC1h7Zc3xWkP6pXkklPKYd8uA0o34=CC4F8AF2' --header 'Accept: application/json' --header 'Content-Type: application/json' --data '{"transition": {"id": "3"}}'
 '''         
          }} 
 
@@ -60,11 +60,11 @@ for (int i = 0; i < 10; i++) {
                 sh '''
 id
 ##User Addition##
-sudo useradd -m -p $(openssl passwd -1 Proximus#18) SPT -g sudo
+sudo useradd -m -p $(openssl passwd -1 Proximus#18) SPT_Test -g sudo
 ##UserCheck###
-sudo cat /etc/passwd | grep -i SPT
+sudo cat /etc/passwd | grep -i SPT_Test
 ##Login whicth User###
-sshpass -p 'Proximus#18' ssh SPT@192.168.1.105
+sshpass -p 'Proximus#18' ssh SPT_Test@192.168.1.105
 exit
 '''
             }}
