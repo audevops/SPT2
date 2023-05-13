@@ -19,7 +19,7 @@ pipeline {
 
     stage('Jira Transition ID 3') {
       steps {
-                 sh(script: 'curl -X POST -H "Authorization: Basic $Key" -H "Content-Type: application/json" --data "{"transition": {"id": "3"}}" --url "https://ausdevops.atlassian.net/rest/api/latest/issue/$Jira_ID/transitions"', returnStdout: true).trim()    
+                Transition = sh(script: 'curl -X POST -H "Authorization: Basic $Key" -H "Content-Type: application/json" --data "{"transition": {"id": "3"}}" --url "https://ausdevops.atlassian.net/rest/api/latest/issue/$Jira_ID/transitions"', returnStdout: true).trim()    
          }} 
 
 
