@@ -21,9 +21,7 @@ pipeline {
       steps {
          
         sh '''
-# curl --request POST --url 'https://ausdevops.atlassian.net/rest/api/latest/issue/$Jira_ID/transitions' --user 'shashwat.prasad.telstra@gmail.com:ATATT3xFfGF0B2NwWSue2gxRQpS7x1AaOA1gfGSNrSnysnBc8ji6g0A1XH4zOEjzteTec-Rh6st60rf9vZHUGNiOghF1UrPdMIzrGAT1Ay76Em-PzPsameT5cshaHj4TTJAouwn0d7w4rwy3qfN7LniYllUDfN4e6gAE3l69M_AzJ8qrJ_6Updo=7F03D91E' --header 'Accept: application/json' --header 'Content-Type: application/json' --data '{"transition": {"id": "3"}}'
-#curl --request POST --url 'https://ausdevops.atlassian.net/rest/api/latest/issue/$Jira_ID/transitions' -H "Authorization: Basic $Key -H "Content-Type: application/json" --data '{"transition": {"id": "3"}}'
-curl --request POST --url 'https://ausdevops.atlassian.net/rest/api/latest/issue/$Jira_ID/transitions' -H "Authorization: Basic $Key" -H "Content-Type: application/json" --data '{"transition": {"id": "3"}}'
+        curl --request POST --url 'https://ausdevops.atlassian.net/rest/api/latest/issue/$Jira_ID/transitions' -H "Authorization: Basic $Key" -H "Content-Type: application/json" --data '{"transition": {"id": "3"}}'
 '''         
          }} 
 
