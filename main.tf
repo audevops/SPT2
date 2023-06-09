@@ -1,44 +1,44 @@
 
 provider "azurerm" {
 
-  client_id       = "fe6eee2a-ec19-4dd6-995a-e34756131a69"
-  client_secret   = "zcU8Q~Mw5qGiNDNo1vM3TPai1zyp7~faw8ra3aIU"
+  client_id       = "97d9be21-2185-423a-b450-c1cec63b1e4b"
+  client_secret   = "QvY8Q~nYgkL2yj3jiiRd0EtfYfulvcnlvgTLAcZf"
   tenant_id       = "84f1e4ea-8554-43e1-8709-f0b8589ea118"
-  subscription_id = "80ea84e8-afce-4851-928a-9e2219724c69"
+  subscription_id = "0cfe2870-d256-4119-b0a3-16293ac11bdc"
   features {}
   skip_provider_registration = true
 }
 
 /*resource "azurerm_resource_group" "Sandbox_RG" {
-  name     = "1-f20ed632-playground-sandbox"
-  location = "East US"
+  name     = "1-955a11d0-playground-sandbox"
+  location = "South Central US"
 }*/
 
 resource "azurerm_virtual_network" "Sandbox_Vnet" {
   name                = "Sandbox_Vnet"
   address_space       = ["10.0.0.0/16"]
-  location            = "East US"
-  resource_group_name = "1-f20ed632-playground-sandbox"
+  location            = "South Central US"
+  resource_group_name = "1-955a11d0-playground-sandbox"
 }
 
 resource "azurerm_subnet" "Sandbox_sub" {
   name                 = "Sandbox-subnet"
-  resource_group_name  = "1-f20ed632-playground-sandbox"
+  resource_group_name  = "1-955a11d0-playground-sandbox"
   virtual_network_name = azurerm_virtual_network.Sandbox_Vnet.name
   address_prefixes     = ["10.0.0.0/24"]
 }
 
 resource "azurerm_public_ip" "Sandbox_pub_IP" {
   name                = "Sandbox-public-ip"
-  location            = "East US"
-  resource_group_name = "1-f20ed632-playground-sandbox"
+  location            = "South Central US"
+  resource_group_name = "1-955a11d0-playground-sandbox"
   allocation_method   = "Dynamic"
 }
 
 resource "azurerm_network_interface" "Sandbox-nic" {
   name                = "Sandbox-nic"
-  location            = "East US"
-  resource_group_name = "1-f20ed632-playground-sandbox"
+  location            = "South Central US"
+  resource_group_name = "1-955a11d0-playground-sandbox"
   ip_configuration {
     name                          = "Sandbox-nic-configuration"
     subnet_id                     = azurerm_subnet.Sandbox_sub.id
@@ -49,8 +49,8 @@ resource "azurerm_network_interface" "Sandbox-nic" {
 
 resource "azurerm_linux_virtual_machine" "Sandbox_VM" {
   name                = "SandboxVM"
-  location            = "East US"
-  resource_group_name = "1-f20ed632-playground-sandbox"
+  location            = "South Central US"
+  resource_group_name = "1-955a11d0-playground-sandbox"
   size                = "Standard_DS1_v2"
   admin_username      = "adminuser"
   network_interface_ids = [
